@@ -1,0 +1,120 @@
+
+body {
+	padding-top: 3rem;
+}
+
+.cis-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 3rem;
+	padding: 0 1rem;
+
+	background-color: #583;
+	box-shadow: 0 -.2rem .4rem #3338 inset;
+	color: #fff;
+	font-weight: 300;
+	white-space: nowrap;
+
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+	justify-content: space-between;
+	z-index: 60;
+
+	::selection {
+		background-color: #fff;
+		color: #583;
+	}
+
+	.cis-brand {
+		display: flex;
+		align-items: center;
+
+		.cis-brand-logo {
+			height: 2.5rem;
+			margin-right: .5rem;
+
+			fill: none;
+			stroke: #fff;
+			stroke-width: 1;
+			stroke-linecap: round;
+			stroke-linejoin: round;
+		}
+
+	}
+
+	.cis-header-search, .cis-header-button {
+		box-sizing: border-box;
+		height: 2rem;
+		margin: 0;
+
+		border: 1px solid #fff;
+		border-radius: .3rem;
+
+		display: flex;
+		overflow: hidden;
+	}
+
+	.cis-header-search {
+		min-width: 24rem;
+
+		.cis-search-input {
+			flex-grow: 1;
+			margin: 0;
+			padding: .2em .5em;
+			width: 8rem;
+
+			border-right: 1px solid #fff;
+
+			&::placeholder {
+				opacity: .8;
+				color: inherit;
+			}
+
+		}
+
+		.cis-search-button {
+			width: 2.5rem;
+			transition: background-color .2s;
+
+			svg {
+				height: 1.25rem;
+				vertical-align: middle;
+
+				path {
+					transition: stroke .2s;
+				}
+			}
+
+			&:hover, &:focus {
+				background-color: #fff;
+
+				svg path {
+					stroke: #583;
+				}
+
+			}
+
+		}
+
+	}
+
+	.cis-header-button {
+		align-items: center;
+		padding: 0 1rem;
+		transition: .2s;
+
+		&:hover, &:focus {
+			background-color: #fff;
+			color: #583;
+		}
+
+	}
+
+	.cis-header-login {
+		@extend .cis-header-button;
+	}
+
+}
